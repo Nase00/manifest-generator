@@ -10,8 +10,8 @@ router.get("/manifest.json", async (ctx, next) => {
   const params = queryString.parse(
     ctx.originalUrl.replace("/manifest.json", "")
   );
-
-  ctx.body = JSON.stringify(params);
+  console.log("foo", ctx.originalUrl);
+  ctx.body = params.content;
 });
 
 server.use(router.routes());
