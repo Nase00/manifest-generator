@@ -21,7 +21,7 @@ const readdHashes = params => {
     delete rehashedParams.background_color;
   }
 
-  return rehashedParams.replace(/HASH/g, "#");
+  return JSON.parse(JSON.stringify(rehashedParams).replace(/HASH/g, "#"));
 };
 
 router.get("/manifest.json", (ctx, next) => {
